@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import {Icon} from 'react-native-elements';
-import {useNavigation} from '@react-navigation/native';
+import { Icon } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/native';
 SignUp = () => {
   const navigation = useNavigation();
   return (
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   header: {
-    top: -50,
+    top: -30,
     textAlign: 'center',
     fontSize: 70,
     color: '#94cd13',

@@ -1,83 +1,67 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
+
+import AppContainer from './appContainer';
+
 Home = () => {
-  const navigation = useNavigation();
+  const [loading, setLoading] = useState(false);
+  const list = [
+    {text: 'Seat of the Symptoms', img: require('./images/1.jpg')},
+    {text: 'Moral and Intellectual Faculties', img: require('./images/2.jpg')},
+    {text: 'Organs and Their Functions', img: require('./images/3.jpg')},
+    {text: 'Morbid Conditions and Sensations', img: require('./images/4.jpg')},
+    {text: 'Circulation and Fevers', img: require('./images/5.jpg')},
+    {text: 'Yawning,Sleep and Dreams', img: require('./images/6.jpg')},
+    {text: 'Etiology, etc.', img: require('./images/7.jpg')},
+    {
+      text: 'Concordances of the Homeopatic Medicines',
+      img: require('./images/8.jpg'),
+    },
+  ];
+  deneme = () => {
+    setLoading(true);
+    const timeout = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timeout);
+  };
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.boxText}>HOMEOPATI</Text>
+    <AppContainer header="HOMEOPATI" loading={loading}>
+      <View style={styles.container}>
+        {list.map((item, i) => {
+          return (
+            <Box key={i} text={item.text} img={item.img} onPress={deneme} />
+          );
+        })}
       </View>
-      <View style={styles.column}>
-        <View style={styles.row}>
-          <View style={styles.box}>
-            <Text style={styles.boxText}>Seat of the Symptoms</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.boxText}>Moral and Intellectual Faculties</Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.column}>
-        <View style={styles.row}>
-          <View style={styles.box}>
-            <Text style={styles.boxText}>Organs and Their Functions</Text>
-          </View>
-          <View style={styles.box}></View>
-        </View>
-      </View>
-      <View style={styles.column}>
-        <View style={styles.row}>
-          <View style={styles.box}></View>
-          <View style={styles.box}></View>
-        </View>
-      </View>
-      <View style={styles.column}>
-        <View style={styles.row}>
-          <View style={styles.box}></View>
-          <View style={styles.box}></View>
-        </View>
-      </View>
-      <View style={styles.navigation}>
-        <TouchableOpacity
-          style={styles.tab}
-          onPress={() => navigation.navigate('Home')}>
-          <Icon style={styles.tabItem} name="home" color="#94cd13" size={18} />
-          <Text style={styles.tabItem}>Ana Sayfa</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tab}
-          onPress={() => navigation.navigate('SignIn')}>
-          <Icon style={styles.tabItem} name="search" color="#000" size={18} />
-          <Text style={styles.tabItem}>Arama</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tab}
-          onPress={() => navigation.navigate('SignIn')}>
-          <Icon style={styles.tabItem} name="mortar-pestle" size={18} />
-          <Text style={styles.tabItem}>Tanılar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tab}
-          onPress={() => navigation.navigate('SignIn')}>
-          <Icon style={styles.tabItem} name="users" color="#000" size={18} />
-          <Text style={styles.tabItem}>Hastalar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tab}
-          onPress={() => navigation.navigate('Profile')}>
-          <Icon style={styles.tabItem} name="user" color="#000" size={18} />
-          <Text style={styles.tabItem}>Profilim</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    </AppContainer>
   );
 };
 export default Home;
+const Box = ({text, img, onPress}) => {
+  return (
+    <TouchableOpacity activeOpacity={0.8} style={styles.box} onPress={onPress}>
+      <ImageBackground
+        source={img}
+        style={styles.image}
+        imageStyle={{borderRadius: 10}}>
+        <Text style={styles.boxText}>{text}</Text>
+      </ImageBackground>
+    </TouchableOpacity>
+  );
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignContent: 'center',
+    overflow: 'scroll',
   },
   row: {
     flex: 2,
@@ -88,42 +72,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   box: {
-    flex: 2,
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.2)',
-    backgroundColor: '#99CA93',
-    borderRadius: 10,
+    width: '45%',
+    height: '21%',
     margin: 5,
-    justifyContent: 'center',
   },
   boxText: {
+    flex: 1,
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 25,
+    padding: 15,
     color: '#fff',
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    borderRadius: 10,
   },
-  header: {
-    backgroundColor: '#94cd13',
-    width: '100%',
-    height: 50,
-    justifyContent: 'center',
-  },
-  navigation: {
-    width: '100%',
-    height: 60,
-    bottom: 0,
-    borderTopColor: '#ddd',
-    borderTopWidth: 2,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  tab: {
+  image: {
     flex: 1,
-    flexDirection: 'column',
+    resizeMode: 'cover',
     justifyContent: 'center',
-  },
-  tabItem: {
-    flex: 1,
-    textAlign: 'center',
-    padding: 5,
+    borderRadius: 10,
   },
 });

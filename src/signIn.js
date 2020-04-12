@@ -5,9 +5,10 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  StatusBar,
 } from 'react-native';
-import {Icon} from 'react-native-elements';
-import {useNavigation} from '@react-navigation/native';
+import { Icon } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/native';
 SignIn = () => {
   const navigation = useNavigation();
   return (
