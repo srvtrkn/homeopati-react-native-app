@@ -41,17 +41,19 @@ export default (Patients = () => {
     }
   });
   return (
-    <AppContainer header="Hastalar" loading={loading}>
-      <View style={styles.inputContainer}>
-        <Icon name="search" style={styles.icon} color="#000" />
-        <TextInput
-          placeholder="ARAMA"
-          style={styles.input}
-          value={searchkey}
-          onChangeText={searchkey => {
-            setSearchkey(searchkey);
-          }}
-        />
+    <AppContainer loading={loading}>
+      <View style={styles.header}>
+        <View style={styles.inputContainer}>
+          <Icon name="search" style={styles.icon} color="#000" />
+          <TextInput
+            placeholder="ARAMA"
+            style={styles.input}
+            value={searchkey}
+            onChangeText={searchkey => {
+              setSearchkey(searchkey);
+            }}
+          />
+        </View>
       </View>
       <SafeAreaView style={styles.container}>
         <FlatList
@@ -108,20 +110,25 @@ const styles = StyleSheet.create({
     paddingRight: 50,
   },
   inputContainer: {
-    padding: 20,
-    marginVertical: 5,
-    marginHorizontal: 20,
-    height: 48,
+    height: 30,
+    marginHorizontal: 30,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(256,256,256,0.7)',
     borderRadius: 10,
   },
   input: {
-    backgroundColor: '#fff',
-    paddingHorizontal: 10,
-    width: '90%',
-    padding: 10,
-    height: 48,
+    flex: 1,
+    padding: 0,
+    marginHorizontal: 5,
+  },
+  header: {
+    backgroundColor: '#94cd13',
+    width: '100%',
+    height: 50,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
   },
 });

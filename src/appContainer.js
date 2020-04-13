@@ -30,8 +30,8 @@ AppContainer = ({children, header, showTab = true, loading = false}) => {
       {showTab && (
         <View style={styles.navigation}>
           <TabItem icon="home" title="Ana Sayfa" onPress="Home" />
-          <TabItem icon="search" title="Arama" onPress="SignIn" />
-          <TabItem icon="mortar-pestle" title="Tanılar" onPress="SignIn" />
+          <TabItem icon="search" title="Arama" onPress="Search" />
+          <TabItem icon="mortar-pestle" title="Tanılar" onPress="Diagnostics" />
           <TabItem icon="users" title="Hastalar" onPress="Patients" />
           <TabItem icon="user" title="Profilim" onPress="Profile" />
         </View>

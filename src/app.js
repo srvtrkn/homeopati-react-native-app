@@ -3,23 +3,27 @@ import {StyleSheet, View, Text, Animated, StatusBar} from 'react-native';
 import Home from './home';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import SignIn from './signIn';
-import SignUp from './signUp';
-import Patients from './patients';
-import Profile from './profile';
+import signIn from './signIn';
+import signUp from './signUp';
+import patients from './patients';
+import profile from './profile';
+import search from './search';
+import diagnostics from './diagnostics';
 
 const Stack = createStackNavigator();
 const MyStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="SignIn"
         screenOptions={{headerShown: false, animationEnabled: false}}>
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="SignIn" component={SignIn} />
-        <Stack.Screen name="SignUp" component={SignUp} />
-        <Stack.Screen name="Patients" component={Patients} />
-        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="SignIn" component={signIn} />
+        <Stack.Screen name="SignUp" component={signUp} />
+        <Stack.Screen name="Patients" component={patients} />
+        <Stack.Screen name="Profile" component={profile} />
+        <Stack.Screen name="Search" component={search} />
+        <Stack.Screen name="Diagnostics" component={diagnostics} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -32,7 +36,7 @@ const Animation = ({scale = 1}) => (
     <Text style={styles.text}>HOMEOPATI</Text>
   </Animated.View>
 );
-const usePulse = (startDelay = 1000) => {
+const usePulse = (startDelay = 300) => {
   const scale = useRef(new Animated.Value(1)).current;
   const pulse = () => {
     Animated.sequence([
