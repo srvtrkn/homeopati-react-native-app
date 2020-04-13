@@ -9,8 +9,7 @@ import Patients from './patients';
 import Profile from './profile';
 
 const Stack = createStackNavigator();
-
-function MyStack() {
+const MyStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -24,7 +23,7 @@ function MyStack() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 const Animation = ({scale = 1}) => (
   <Animated.View
     style={{
@@ -47,7 +46,7 @@ const usePulse = (startDelay = 1000) => {
   }, []);
   return scale;
 };
-App = () => {
+export default (App = () => {
   const scale = usePulse();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -65,8 +64,8 @@ App = () => {
       <MyStack />
     </View>
   );
-};
-export default App;
+});
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

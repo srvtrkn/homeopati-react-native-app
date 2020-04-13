@@ -86,14 +86,6 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     overflow: 'scroll',
   },
-  row: {
-    flex: 2,
-    flexDirection: 'row',
-  },
-  column: {
-    flex: 2,
-    flexDirection: 'row',
-  },
   box: {
     width: '45%',
     height: '21%',
