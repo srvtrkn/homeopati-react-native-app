@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import { Icon } from 'react-native-elements';
-import { useNavigation } from '@react-navigation/native';
+import {Icon} from 'react-native-elements';
+import {useNavigation} from '@react-navigation/native';
 SignUp = () => {
   const navigation = useNavigation();
   return (
@@ -15,18 +15,15 @@ SignUp = () => {
       <Text style={styles.header}>HOMEOPATI</Text>
       <View style={styles.inputContainer}>
         <Icon name="person" style={styles.icon} color="#000" />
-        <TextInput placeholder="Ad Soyad" style={styles.input}></TextInput>
+        <TextInput placeholder="Ad Soyad" style={styles.input} />
       </View>
       <View style={styles.inputContainer}>
         <Icon name="mail" style={styles.icon} color="#000" />
-        <TextInput placeholder="E-posta" style={styles.input}></TextInput>
+        <TextInput placeholder="E-posta" style={styles.input} />
       </View>
       <View style={styles.inputContainer}>
         <Icon name="lock" style={styles.icon} color="#000" />
-        <TextInput
-          placeholder="Şifre"
-          style={styles.input}
-          secureTextEntry></TextInput>
+        <TextInput placeholder="Şifre" style={styles.input} secureTextEntry />
       </View>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Hesap Oluştur</Text>

@@ -12,13 +12,34 @@ import AppContainer from './appContainer';
 Home = () => {
   const [loading, setLoading] = useState(false);
   const list = [
-    {text: 'Seat of the Symptoms', img: require('./images/1.jpg')},
-    {text: 'Moral and Intellectual Faculties', img: require('./images/2.jpg')},
-    {text: 'Organs and Their Functions', img: require('./images/3.jpg')},
-    {text: 'Morbid Conditions and Sensations', img: require('./images/4.jpg')},
-    {text: 'Circulation and Fevers', img: require('./images/5.jpg')},
-    {text: 'Yawning,Sleep and Dreams', img: require('./images/6.jpg')},
-    {text: 'Etiology, etc.', img: require('./images/7.jpg')},
+    {
+      text: 'Seat of the Symptoms',
+      img: require('./images/1.jpg'),
+    },
+    {
+      text: 'Moral and Intellectual Faculties',
+      img: require('./images/2.jpg'),
+    },
+    {
+      text: 'Organs and Their Functions',
+      img: require('./images/3.jpg'),
+    },
+    {
+      text: 'Morbid Conditions and Sensations',
+      img: require('./images/4.jpg'),
+    },
+    {
+      text: 'Circulation and Fevers',
+      img: require('./images/5.jpg'),
+    },
+    {
+      text: 'Yawning,Sleep and Dreams',
+      img: require('./images/6.jpg'),
+    },
+    {
+      text: 'Etiology, etc.',
+      img: require('./images/7.jpg'),
+    },
     {
       text: 'Concordances of the Homeopatic Medicines',
       img: require('./images/8.jpg'),
@@ -48,8 +69,10 @@ const Box = ({text, img, onPress}) => {
       <ImageBackground
         source={img}
         style={styles.image}
-        imageStyle={{borderRadius: 10}}>
-        <Text style={styles.boxText}>{text}</Text>
+        imageStyle={{
+          borderRadius: 10,
+        }}>
+        <Text style={styles.boxText}> {text} </Text>
       </ImageBackground>
     </TouchableOpacity>
   );

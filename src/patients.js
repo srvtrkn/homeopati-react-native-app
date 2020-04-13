@@ -19,7 +19,7 @@ const data = Array.from({length: 50}, (_v, k) => {
       'tanı tanı tanı tanı tanı tanı tanı tanı tanı tanı tanı tanı tanı tanı',
   };
 });
-export default Patients = () => {
+export default (Patients = () => {
   const [searchkey, setSearchkey] = useState('');
   const [loading, setLoading] = useState(false);
   deneme = () => {
@@ -50,26 +50,24 @@ export default Patients = () => {
           value={searchkey}
           onChangeText={searchkey => {
             setSearchkey(searchkey);
-          }}></TextInput>
+          }}
+        />
       </View>
       <SafeAreaView style={styles.container}>
         <FlatList
           data={list}
           renderItem={p => <Patient p={p} />}
           keyExtractor={item => item.id.toString()}
-          refre
         />
       </SafeAreaView>
     </AppContainer>
   );
-};
+});
 const Patient = ({p}) => {
   return (
     <TouchableOpacity activeOpacity={0.6} style={styles.item} onPress={deneme}>
       <View>
-        <Image
-          style={styles.img}
-          source={require('./images/person.png')}></Image>
+        <Image style={styles.img} source={require('./images/person.png')} />
       </View>
       <View>
         <Text style={styles.title}>{p.item.name + ' ' + p.item.surname}</Text>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -7,51 +7,51 @@ import {
   Modal,
   ActivityIndicator,
   StatusBar,
-  KeyboardAvoidingView, Platform
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { useNavigation } from '@react-navigation/native';
-AppContainer = ({ children, header, showTab = true, loading = false }) => {
+import {useNavigation} from '@react-navigation/native';
+AppContainer = ({children, header, showTab = true, loading = false}) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <Loading show={loading}></Loading>
+      <Loading show={loading} />
       {header && (
         <View style={styles.header}>
           <Text style={styles.headerText}>{header}</Text>
         </View>
       )}
-      <KeyboardAvoidingView behavior={Platform.Os == "ios" ? "padding" : "height"} style={styles.container}>
+      <KeyboardAvoidingView
+        behavior={Platform.Os == 'ios' ? 'padding' : 'height'}
+        style={styles.container}>
         {children}
       </KeyboardAvoidingView>
       {showTab && (
         <View style={styles.navigation}>
-          <TabItem icon="home" title="Ana Sayfa" onPress="Home"></TabItem>
-          <TabItem icon="search" title="Arama" onPress="SignIn"></TabItem>
-          <TabItem
-            icon="mortar-pestle"
-            title="Tanılar"
-            onPress="SignIn"></TabItem>
-          <TabItem icon="users" title="Hastalar" onPress="Patients"></TabItem>
-          <TabItem icon="user" title="Profilim" onPress="SignIn"></TabItem>
+          <TabItem icon="home" title="Ana Sayfa" onPress="Home" />
+          <TabItem icon="search" title="Arama" onPress="SignIn" />
+          <TabItem icon="mortar-pestle" title="Tanılar" onPress="SignIn" />
+          <TabItem icon="users" title="Hastalar" onPress="Patients" />
+          <TabItem icon="user" title="Profilim" onPress="Profile" />
         </View>
       )}
     </View>
   );
 };
 export default AppContainer;
-const TabItem = ({ icon, onPress, title }) => {
+const TabItem = ({icon, onPress, title}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={styles.tab}
       onPress={() => navigation.navigate(onPress)}>
       <Icon style={styles.tabItem} name={icon} color="#000" size={18} />
-      <Text style={styles.tabItem}>{title}</Text>
+      <Text style={[styles.tabItem, {color: '#000'}]}>{title}</Text>
     </TouchableOpacity>
   );
 };
-const Loading = ({ show }) => {
+const Loading = ({show}) => {
   return (
     <Modal animationType="none" transparent visible={show}>
       <View style={[styles.loadingContainer, styles.horizontal]}>

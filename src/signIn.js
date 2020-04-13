@@ -5,10 +5,9 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  StatusBar,
 } from 'react-native';
-import { Icon } from 'react-native-elements';
-import { useNavigation } from '@react-navigation/native';
+import {Icon} from 'react-native-elements';
+import {useNavigation} from '@react-navigation/native';
 SignIn = () => {
   const navigation = useNavigation();
   return (
@@ -18,14 +17,12 @@ SignIn = () => {
         <Icon name="mail" style={styles.icon} color="#000" />
         <TextInput
           placeholder="E-posta veya Kullanıcı Adı"
-          style={styles.input}></TextInput>
+          style={styles.input}
+        />
       </View>
       <View style={styles.inputContainer}>
         <Icon name="lock" style={styles.icon} color="#000" />
-        <TextInput
-          placeholder="Şifre"
-          style={styles.input}
-          secureTextEntry></TextInput>
+        <TextInput placeholder="Şifre" style={styles.input} secureTextEntry />
       </View>
       <TouchableOpacity
         style={styles.button}
