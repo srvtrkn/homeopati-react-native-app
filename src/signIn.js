@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-import {Icon} from 'react-native-elements';
-import {useNavigation} from '@react-navigation/native';
+  StyleSheet
+} from "react-native";
+import { Icon } from "react-native-elements";
+import { useNavigation } from "@react-navigation/native";
 SignIn = () => {
   const navigation = useNavigation();
   return (
@@ -26,7 +26,8 @@ SignIn = () => {
       </View>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('Home')}>
+        onPress={() => navigation.navigate("Drawer")}
+      >
         <Text style={styles.buttonText}>Oturum Aç</Text>
       </TouchableOpacity>
       <View style={styles.buttonContainer}>
@@ -35,7 +36,8 @@ SignIn = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.textButton}
-          onPress={() => navigation.navigate('SignUp')}>
+          onPress={() => navigation.navigate("SignUp")}
+        >
           <Text style={styles.text2}>Kayıt Ol</Text>
         </TouchableOpacity>
       </View>
@@ -46,67 +48,67 @@ export default SignIn;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center"
   },
   inputContainer: {
-    width: '100%',
+    width: "100%",
     height: 48,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
     padding: 10,
     marginTop: 5,
-    borderRadius: 10,
+    borderRadius: 10
   },
   buttonContainer: {
     height: 48,
-    flexDirection: 'row',
-    alignItems: 'center',
-    margin: 20,
+    flexDirection: "row",
+    alignItems: "center",
+    margin: 20
   },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingHorizontal: 10,
-    width: '90%',
+    width: "90%",
     padding: 10,
-    height: 48,
+    height: 48
   },
   icon: {
-    padding: 20,
+    padding: 20
   },
   button: {
     height: 48,
     paddingVertical: 15,
     borderRadius: 10,
     margin: 10,
-    backgroundColor: '#94cd13',
-    alignItems: 'center',
+    backgroundColor: "#94cd13",
+    alignItems: "center"
   },
   buttonText: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 30,
     marginTop: -10,
-    color: '#fff',
+    color: "#fff"
   },
   header: {
     top: -50,
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 70,
-    color: '#94cd13',
+    color: "#94cd13"
   },
   text1: {
-    textAlign: 'left',
-    fontWeight: 'bold',
-    color: '#aaa',
-    fontSize: 20,
+    textAlign: "left",
+    fontWeight: "bold",
+    color: "#aaa",
+    fontSize: 20
   },
   text2: {
-    textAlign: 'right',
-    color: '#94cd13',
-    fontWeight: 'bold',
-    fontSize: 20,
+    textAlign: "right",
+    color: "#94cd13",
+    fontWeight: "bold",
+    fontSize: 20
   },
   textButton: {
-    flex: 2,
-  },
+    flex: 2
+  }
 });
