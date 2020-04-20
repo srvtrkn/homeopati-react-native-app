@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   StyleSheet
 } from "react-native";
-import { Icon } from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome5";
 import { useNavigation } from "@react-navigation/native";
 SignIn = () => {
   const navigation = useNavigation();
@@ -14,7 +14,7 @@ SignIn = () => {
     <View style={styles.container}>
       <Text style={styles.header}>HOMEOPATI</Text>
       <View style={styles.inputContainer}>
-        <Icon name="mail" style={styles.icon} color="#000" />
+        <Icon name="envelope" style={styles.icon} color="#000" solid />
         <TextInput
           placeholder="E-posta veya Kullanıcı Adı"
           style={styles.input}

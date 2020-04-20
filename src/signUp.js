@@ -1,24 +1,24 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-import {Icon} from 'react-native-elements';
-import {useNavigation} from '@react-navigation/native';
+  StyleSheet
+} from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome5";
+import { useNavigation } from "@react-navigation/native";
 SignUp = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Text style={styles.header}>HOMEOPATI</Text>
       <View style={styles.inputContainer}>
-        <Icon name="person" style={styles.icon} color="#000" />
+        <Icon name="user" style={styles.icon} color="#000" solid />
         <TextInput placeholder="Ad Soyad" style={styles.input} />
       </View>
       <View style={styles.inputContainer}>
-        <Icon name="mail" style={styles.icon} color="#000" />
+        <Icon name="envelope" style={styles.icon} color="#000" solid />
         <TextInput placeholder="E-posta" style={styles.input} />
       </View>
       <View style={styles.inputContainer}>
@@ -30,7 +30,7 @@ SignUp = () => {
       </TouchableOpacity>
       <View style={styles.buttonContainer}>
         <Text style={styles.span}>Zaten üye misin ? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+        <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
           <Text style={styles.text1}>Giriş Yap</Text>
         </TouchableOpacity>
       </View>
@@ -41,64 +41,64 @@ export default SignUp;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center"
   },
   inputContainer: {
-    width: '100%',
+    width: "100%",
     height: 48,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
     padding: 10,
     marginTop: 5,
-    borderRadius: 10,
+    borderRadius: 10
   },
   buttonContainer: {
     height: 48,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     margin: 20,
-    justifyContent: 'center',
+    justifyContent: "center"
   },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingHorizontal: 10,
-    width: '90%',
+    width: "90%",
     padding: 10,
-    height: 48,
+    height: 48
   },
   icon: {
-    padding: 20,
+    padding: 20
   },
   button: {
     height: 48,
     paddingVertical: 15,
     borderRadius: 10,
     margin: 10,
-    backgroundColor: '#94cd13',
-    alignItems: 'center',
+    backgroundColor: "#94cd13",
+    alignItems: "center"
   },
   buttonText: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 30,
     marginTop: -10,
-    color: '#fff',
+    color: "#fff"
   },
   header: {
     top: -30,
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 70,
-    color: '#94cd13',
+    color: "#94cd13"
   },
   span: {
-    textAlign: 'left',
+    textAlign: "left",
     fontSize: 20,
-    color: '#aaa',
+    color: "#aaa"
   },
   text1: {
-    textAlign: 'left',
-    fontWeight: 'bold',
-    color: '#94cd13',
-    fontSize: 20,
-  },
+    textAlign: "left",
+    fontWeight: "bold",
+    color: "#94cd13",
+    fontSize: 20
+  }
 });

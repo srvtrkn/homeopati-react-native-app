@@ -9,7 +9,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import {Icon} from 'react-native-elements';
+import Icon from "react-native-vector-icons/FontAwesome5";
 const medicineList = Array.from({length: 50}, (_v, k) => {
   return {
     id: k + 1,

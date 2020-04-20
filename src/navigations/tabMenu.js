@@ -41,7 +41,7 @@ export default (TabMenu = () => {
             <Text style={{ color: color, paddingBottom: 7 }}>Arama</Text>
           ),
           tabBarIcon: ({ color }) => (
-            <Icon name="search" color={color} size={18} />
+            <Icon name="search" color={color} size={18} solid />
           )
         }}
       />
@@ -77,7 +77,7 @@ export default (TabMenu = () => {
             <Text style={{ color: color, paddingBottom: 7 }}>Profilim</Text>
           ),
           tabBarIcon: ({ color }) => (
-            <Icon name="user" color={color} size={18} />
+            <Icon name="user" color={color} size={18} solid />
           )
         }}
       />
